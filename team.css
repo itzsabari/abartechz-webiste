@@ -1,0 +1,407 @@
+/* ============================================================
+   ABARTECHZ — TEAM PAGE SPECIFIC STYLES
+   ============================================================ */
+
+.team-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(185deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  padding: 60px 0 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Technical grid overlay to match index.html hero style */
+.team-page-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(11, 60, 120, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 60, 120, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.team-page-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(26, 127, 224, 0.05), transparent 70%);
+  top: -200px;
+  right: -100px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.team-page-wrapper .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1600px;
+  /* Further increased container width to support larger, more prominent profile cards */
+}
+
+/* ============================================================
+   BACK TO HOME BUTTON
+   ============================================================ */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: var(--fw-semibold);
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-base), color var(--transition-base), transform var(--transition-spring), box-shadow var(--transition-base);
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.back-btn:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  transform: translateX(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.back-btn svg {
+  transition: transform var(--transition-base);
+}
+
+.back-btn:hover svg {
+  transform: translateX(-2px);
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+.team-header {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: var(--space-8);
+}
+
+.team-header__title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  /* Refined larger modern heading font size */
+  font-weight: 800;
+  /* Distinct startup bold weight */
+  color: var(--color-text-primary);
+  letter-spacing: -0.035em;
+  /* Elegant tight letter spacing */
+  line-height: 1.15;
+  margin-bottom: 24px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Premium text gradient */
+}
+
+.team-header__branding {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.team-header__logo {
+  height: 52px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.team-header__text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-header__name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+}
+
+.team-header__tagline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.team-header__divider {
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border) 20%, var(--color-border) 80%, transparent);
+  margin: 32px auto 0;
+}
+
+/* ============================================================
+   TEAM SECTION & GRID
+   ============================================================ */
+.team-section {
+  width: 100%;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  /* Increased spacing for larger cards layout balance */
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ============================================================
+   PROFILE CARD
+   ============================================================ */
+.profile-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 290px;
+  /* Increased size proportionally to make profile images highly prominent */
+  margin: 0 auto;
+  aspect-ratio: 3 / 4.15;
+  /* Kept exact portrait aspect ratio */
+  box-shadow: 0 12px 32px rgba(11, 60, 120, 0.06);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  background: var(--color-white);
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 48px rgba(11, 60, 120, 0.14);
+}
+
+.profile-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--transition-slow);
+}
+
+.profile-card:hover .profile-card__img {
+  transform: scale(1.04);
+}
+
+/* ============================================================
+   GLASS INFORMATION CARD
+   ============================================================ */
+.glass-card {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  height: 150px;
+  /* Fixed height for exact dimensions consistency across all profile cards */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: rgba(15, 23, 42, 0.55);
+  /* Frosted dark glass */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 16px;
+  color: var(--color-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: background var(--transition-base), transform var(--transition-base);
+  z-index: 2;
+}
+
+.profile-card:hover .glass-card {
+  background: rgba(15, 23, 42, 0.70);
+  /* Darkens slightly on hover for content focus */
+}
+
+/* Diagonal up-right arrow button inside glass card */
+.glass-card__arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background var(--transition-base), color var(--transition-base), transform 0.4s var(--transition-spring);
+}
+
+.profile-card:hover .glass-card__arrow {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+  transform: rotate(45deg);
+}
+
+/* Info content styling */
+.glass-card__name {
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.glass-card__role {
+  font-size: 0.78rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary-light);
+  /* Accent color text */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.glass-card__tagline {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.45;
+  margin-bottom: 0;
+  /* Cleared bottom margin to let margin-top: auto on socials handle spacing */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Social icons layout */
+.glass-card__socials {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: auto;
+  /* Pushes the social bar to the bottom of the fixed-height container */
+}
+
+.glass-card__social-link {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  text-decoration: none;
+}
+
+.glass-card__social-link:hover {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+.glass-card__social-link svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+/* Laptop screens */
+@media (max-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Tablet screens */
+@media (max-width: 868px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .team-header {
+    margin-bottom: 40px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 580px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .back-btn {
+    margin-bottom: 16px;
+  }
+
+  .team-header__title {
+    font-size: 2.2rem;
+  }
+}
+
+/* ============================================================
+   TEAM PAGE BUTTON ADDITION (SEE ALL PEOPLE)
+   ============================================================ */
+.team-cta-wrap {
+  text-align: center;
+  margin-top: 56px;
+  position: relative;
+  z-index: 10;
+}
+
+.btn-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-family);
+  font-weight: var(--fw-semibold);
+  font-size: 1rem;
+  color: var(--color-primary-dark);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(238, 243, 251, 0.7) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid var(--color-border);
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(11, 60, 120, 0.06);
+  transition: background var(--transition-base), border-color var(--transition-base),
+    color var(--transition-base), transform var(--transition-spring), box-shadow var(--transition-base);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-see-all:hover {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(11, 60, 120, 0.2);
+}
+
+.btn-see-all:active {
+  transform: translateY(-1px);
+}
